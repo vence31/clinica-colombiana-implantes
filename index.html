@@ -3,34 +3,1020 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clínica Colombiana de Implantes Dentales • Medellín</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Cl?nica Colombiana de Implantes Dentales ? Medell?n</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css?v=20260831">
+  <style>
+:root {
+  --indigo-primary: #33317c;
+  --indigo-dark: #222055;
+  --emerald-green: #10b981;
+  --emerald-dark: #059669;
+  --slate-bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-card: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--slate-bg);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* 1. Header Navigation */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--indigo-primary);
+  color: #fff;
+  border-bottom: 3px solid var(--emerald-green);
+  padding: 12px 24px;
+  box-shadow: 0 4px 20px rgba(51, 49, 124, 0.25);
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.brand-sub {
+  font-size: 11px;
+  color: #a7f3d0;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
+  padding-left: 10px;
+}
+
+.nav-links-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link-item {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-link-item:hover {
+  color: var(--emerald-green);
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.pbx-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.btn-admin {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Clinic Switcher */
+.clinic-switcher-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.btn-switch-hub {
+  background: var(--emerald-green);
+  color: #064e3b;
+  border: none;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-switch-hub:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.switcher-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  margin-top: 8px;
+  background: #ffffff;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 1px solid var(--border-card);
+  padding: 8px 0;
+  z-index: 200;
+}
+
+.clinic-switcher-dropdown:hover .switcher-menu {
+  display: block;
+}
+
+.switcher-menu a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--text-main);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.switcher-menu a:hover {
+  background: #ecfdf5;
+  color: var(--emerald-dark);
+}
+
+.switcher-menu .active-clinic {
+  background: #f0fdf4;
+  color: var(--emerald-dark);
+  font-weight: 800;
+}
+
+/* 2. Hero Section */
+.hero-section {
+  padding: 40px 24px 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--emerald-green);
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.hero-headline {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  color: var(--indigo-dark);
+}
+
+.text-gradient-indigo {
+  background: linear-gradient(135deg, #33317c 0%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subhead {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 24px;
+  max-width: 580px;
+}
+
+/* Bento Cards */
+.bento-card {
+  background: #fff;
+  border: 1px solid var(--border-card);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.bento-card:hover {
+  box-shadow: 0 8px 30px rgba(51, 49, 124, 0.12);
+}
+
+.bento-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.bento-title-row h3 {
+  font-size: 15px;
+  color: var(--indigo-dark);
+  font-weight: 700;
+}
+
+.badge-titanium {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.badge-green {
+  background: #dcfce7;
+  color: #166534;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* Facilities Grid */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.facility-item {
+  background: #f8fafc;
+  border: 1px solid var(--border-card);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.facility-item strong { display: block; font-size: 12px; color: var(--indigo-primary); margin-bottom: 4px; }
+.facility-item p { font-size: 10px; color: var(--text-muted); }
+
+/* Calculator */
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+  font-weight: 700;
+}
+
+.form-group select, .form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-card);
+  font-size: 12px;
+  background: #f8fafc;
+  outline: none;
+}
+
+.calc-results {
+  background: #f8fafc;
+  border: 1px solid var(--border-card);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+.res-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.finance-row {
+  border-top: 1px dashed var(--border-card);
+  padding-top: 6px;
+  margin-top: 6px;
+}
+
+.highlight-indigo { color: var(--indigo-primary); font-size: 16px; font-weight: 800; }
+.highlight-emerald { color: var(--emerald-dark); font-size: 15px; font-weight: 800; }
+
+.quick-scenarios {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.scenarios-title { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+.scenario-btn {
+  background: #fff;
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.scenario-btn:hover {
+  background: var(--indigo-primary);
+  color: #fff;
+  border-color: var(--indigo-primary);
+}
+
+/* 3. Phone Spotlight */
+.phone-spotlight-implantes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.phone-header-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ede9fe;
+  color: #5b21b6;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+
+.live-dot-green {
+  width: 6px;
+  height: 6px;
+  background: var(--emerald-green);
+  border-radius: 50%;
+  animation: pulse 1.2s infinite;
+}
+
+.phone-frame {
+  width: 360px;
+  height: 650px;
+  background: #efeae2;
+  border-radius: 40px;
+  border: 10px solid #222055;
+  box-shadow: 0 25px 60px -15px rgba(34, 32, 85, 0.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.phone-notch {
+  height: 20px;
+  background: #222055;
+}
+
+.chat-header {
+  background: var(--indigo-primary);
+  color: #fff;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid var(--emerald-green);
+}
+
+.chat-avatar {
+  font-size: 22px;
+  background: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-meta { flex: 1; }
+.chat-title { font-size: 13px; font-weight: 700; }
+.verified-check { color: var(--emerald-green); }
+.chat-subtitle { font-size: 10px; opacity: 0.85; }
+
+.chat-stream {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #efeae2 url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png") repeat;
+  background-size: 320px;
+}
+
+.date-badge {
+  align-self: center;
+  background: #fff;
+  font-size: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #64748b;
+}
+
+.msg { display: flex; max-width: 85%; }
+.msg.incoming { align-self: flex-start; }
+.msg.outgoing { align-self: flex-end; }
+
+.bubble {
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.msg.incoming .bubble { background: #fff; border-top-left-radius: 0; color: #0f172a; }
+.msg.outgoing .bubble { background: #d9fdd3; border-top-right-radius: 0; color: #0f172a; }
+
+.msg-time { display: block; font-size: 9px; color: #94a3b8; text-align: right; margin-top: 3px; }
+.typing-notice { font-size: 10px; color: var(--indigo-primary); padding: 4px 12px; font-style: italic; }
+
+.voice-indicator {
+  padding: 6px 12px;
+  font-size: 10px;
+  color: #065f46;
+  background: #d1fae5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sound-wave { display: inline-flex; align-items: center; gap: 2px; height: 10px; }
+.sound-wave span {
+  width: 2px;
+  height: 100%;
+  background: var(--emerald-green);
+  animation: wave 0.8s infinite ease-in-out alternate;
+}
+.sound-wave span:nth-child(2) { animation-delay: 0.2s; }
+.sound-wave span:nth-child(3) { animation-delay: 0.4s; }
+.sound-wave span:nth-child(4) { animation-delay: 0.6s; }
+
+.chat-input-bar {
+  background: #f0f2f5;
+  padding: 8px 10px;
+  display: flex;
+  gap: 6px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.chat-input-bar input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #cbd5e1;
+  font-size: 12px;
+  outline: none;
+}
+
+.mic-btn { background: transparent; border: none; font-size: 16px; cursor: pointer; padding: 4px; }
+.btn-send {
+  background: var(--indigo-primary);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* 4. Section 2: Especialidades */
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  border-top: 1px solid var(--border-card);
+}
+
+.section-header { text-align: center; margin-bottom: 36px; }
+.section-kicker { font-size: 11px; color: var(--emerald-dark); font-weight: 800; letter-spacing: 1.5px; }
+.section-header h2 { font-size: 32px; font-weight: 800; color: var(--indigo-dark); margin-top: 6px; }
+.section-header p { color: var(--text-muted); font-size: 14px; margin-top: 4px; }
+
+.specialties-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.specialty-card {
+  background: #fff;
+  border: 1px solid var(--border-card);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s;
+}
+.specialty-card:hover { transform: translateY(-4px); }
+.specialty-icon { font-size: 28px; margin-bottom: 12px; }
+.specialty-card h4 { font-size: 15px; color: var(--indigo-primary); margin-bottom: 6px; }
+.specialty-card p { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+/* 5. Modals */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(34, 32, 85, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-dialog {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.modal-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.modal-head h3 { font-size: 16px; color: var(--indigo-dark); }
+.btn-close { background: transparent; border: none; font-size: 22px; color: #94a3b8; cursor: pointer; }
+
+.admin-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.stat-card { background: #f8fafc; border: 1px solid var(--border-card); padding: 10px 14px; border-radius: 8px; }
+.stat-lbl { font-size: 11px; color: var(--text-muted); }
+.stat-val { font-size: 20px; font-weight: 800; color: var(--indigo-primary); }
+
+.table-scroll { max-height: 380px; overflow-y: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { background: #f1f5f9; color: var(--text-main); padding: 8px 10px; text-align: left; }
+td { padding: 8px 10px; border-bottom: 1px solid var(--border-card); }
+
+.btn-csv { background: var(--indigo-primary); color: #fff; text-decoration: none; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 6px; }
+
+.site-footer {
+  border-top: 1px solid var(--border-card);
+  padding: 20px 24px;
+  background: #fff;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.btn-reset-text { background: transparent; border: none; color: #ef4444; font-size: 11px; cursor: pointer; }
+
+@keyframes wave { 0% { height: 3px; } 100% { height: 10px; } }
+@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
+
+@media (max-width: 1024px) {
+  .hero-container { grid-template-columns: 1fr; }
+  .specialties-grid { grid-template-columns: 1fr 1fr; }
+  .facility-grid { grid-template-columns: 1fr; }
+}
+
+
+
+/* Modern Titanium & Surgical Polish */
+:root {
+  --titanium-grad: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #10b981 100%);
+  --titanium-gold: linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%);
+  --glow-indigo: rgba(99, 102, 241, 0.25);
+  --glow-emerald: rgba(16, 185, 129, 0.25);
+}
+
+.hero-section {
+  background: radial-gradient(circle at 75% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 60%),
+              radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
+              #0d1117;
+  color: #f1f5f9;
+  padding: 60px 0 80px;
+}
+
+.hero-headline {
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.75rem;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+.text-gradient-indigo {
+  background: linear-gradient(135deg, #60a5fa 0%, #818cf8 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subhead {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-pill-badge {
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+  padding: 8px 18px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.bento-card {
+  background: #161b26;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.bento-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  transform: translateY(-2px);
+}
+
+.bento-title-row h3 {
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+.badge-titanium {
+  background: rgba(99, 102, 241, 0.2);
+  border: 1px solid rgba(99, 102, 241, 0.5);
+  color: #c7d2fe;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.badge-green {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  color: #6ee7b7;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.facility-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.facility-item strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.facility-item p {
+  color: #94a3b8;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-top: 14px;
+}
+
+.form-group label {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-group select, .form-group input {
+  width: 100%;
+  background: #0f131c;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group select:focus, .form-group input:focus {
+  border-color: #6366f1;
+}
+
+.calc-results {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 16px;
+}
+
+.res-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  padding: 6px 0;
+}
+
+.highlight-indigo {
+  color: #818cf8;
+  font-size: 1.25rem;
+}
+
+.highlight-emerald {
+  color: #34d399;
+  font-size: 1.15rem;
+}
+
+.scenario-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+.scenario-btn:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: #818cf8;
+  color: #fff;
+}
+
+/* Phone Simulator Enhancements */
+.phone-spotlight-implantes {
+  background: #111520;
+  border: 2px solid rgba(99, 102, 241, 0.4);
+  border-radius: 36px;
+  padding: 16px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 35px rgba(99, 102, 241, 0.2);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.phone-frame {
+  background: #090c12;
+  border-radius: 26px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 580px;
+}
+
+.chat-header {
+  background: #1a1e2d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-title {
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.chat-subtitle {
+  color: #34d399;
+  font-size: 0.75rem;
+}
+
+.chat-stream {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #090c12;
+}
+
+.bubble {
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.msg.incoming .bubble {
+  background: #1e2433;
+  color: #f1f5f9;
+  border-bottom-left-radius: 4px;
+}
+
+.msg.outgoing .bubble {
+  background: #4f46e5;
+  color: #fff;
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+}
+
+.chat-input-bar {
+  background: #161b26;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.chat-input-bar input {
+  flex: 1;
+  background: #0b0e14;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  outline: none;
+}
+
+.btn-send {
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-send:hover {
+  background: #4338ca;
+}
+
+/* Specialties Section */
+.section-container {
+  background: #090c12;
+  color: #fff;
+  padding: 70px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.specialties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto 0;
+}
+
+.specialty-card {
+  background: #131722;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  transition: all 0.2s ease;
+}
+
+.specialty-card:hover {
+  border-color: #6366f1;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.specialty-icon {
+  width: 46px;
+  height: 46px;
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #818cf8;
+  margin-bottom: 16px;
+}
+
+.specialty-card h4 {
+  font-size: 1.1rem;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.specialty-card p {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+  </style>
 </head>
 <body>
   <!-- Top Navigation Header -->
   <header class="top-nav">
     <div class="nav-container">
       <div class="nav-brand">
-        <span class="brand-logo">🦷 CLÍNICA COLOMBIANA DE IMPLANTES</span>
-        <span class="brand-sub">Centro Quirúrgico Medellín • Laureles / Estadio</span>
+        <span class="brand-logo"><i class="fa-solid fa-tooth" style="color:#10b981; margin-right:8px;"></i> CL?NICA COLOMBIANA DE IMPLANTES</span>
+        <span class="brand-sub">Centro Quir?rgico Medell?n ? Laureles / Estadio</span>
       </div>
       <nav class="nav-links-menu">
-        <a href="#quirurgico" class="nav-link-item">Tecnología Quirúrgica</a>
+        <a href="#quirurgico" class="nav-link-item">Tecnolog?a Quir?rgica</a>
         <a href="#especialidades" class="nav-link-item">Implantes & All-on-4</a>
         <a href="#cotizador" class="nav-link-item">Cotizador Titanio</a>
       </nav>
       <div class="nav-actions">
-        <span class="pbx-badge">📞 PBX: (604) 444 8212</span>
-        <button class="btn-admin" onclick="openAdminModal()">📋 Citas Quirúrgicas (<span id="lead-count-badge">0</span>)</button>
+        <span class="pbx-badge"><i class="fa-solid fa-phone"></i> PBX: (604) 444 8212</span>
+        <button class="btn-admin" onclick="openAdminModal()"><i class="fa-solid fa-clipboard-list"></i> Citas (<span id="lead-count-badge">0</span>)</button>
         <!-- Clinic Switcher -->
         <div class="clinic-switcher-dropdown">
-          <button class="btn-switch-hub">🌐 Red Medellín ▾</button>
+          <button class="btn-switch-hub"><i class="fa-solid fa-globe"></i> Red Medell?n ?</button>
           <div class="switcher-menu">
-            <a href="https://vence31.github.io/smile-in-medellin/">1. Smile in Medellín (3000)</a>
-            <a href="https://vence31.github.io/sonria-clinicas-medellin/">2. Sonría Clínicas #262 (3001)</a>
-            <a href="https://vence31.github.io/clinica-artica-medellin/">3. Clínica Ártica (3002)</a>
+            <a href="https://vence31.github.io/smile-in-medellin/">1. Smile in Medell?n (3000)</a>
+            <a href="https://vence31.github.io/sonria-clinicas-medellin/">2. Sonr?a Cl?nicas #262 (3001)</a>
+            <a href="https://vence31.github.io/clinica-artica-medellin/">3. Cl?nica ?rtica (3002)</a>
             <a href="https://vence31.github.io/dental-home-medellin/">4. Dental Home (3003)</a>
             <a href="https://vence31.github.io/marlon-becerra-medellin/">5. Marlon Becerra (3004)</a>
             <a href="https://vence31.github.io/clinica-colombiana-implantes/" class="active-clinic">6. Col. de Implantes (3005)</a>
@@ -48,32 +1034,32 @@
       <div class="hero-left">
         <div class="hero-pill-badge">
           <span class="pulse-dot"></span>
-          <span>🔬 Centro Quirúrgico Especializado • Carga Inmediata en 24 Horas</span>
+          <span><i class="fa-solid fa-microscope"></i> Centro Quir?rgico Especializado ? Carga Inmediata en 24 Horas</span>
         </div>
         <h1 class="hero-headline">
-          Especialistas en Implantes Dentales de Titanio y <span class="text-gradient-indigo">Regeneración Ósea en Medellín.</span>
+          Especialistas en Implantes Dentales de Titanio y <span class="text-gradient-indigo">Regeneraci?n ?sea en Medell?n.</span>
         </h1>
         <p class="hero-subhead">
-          En la <strong>Clínica Colombiana de Implantes Dentales</strong> recuperas tu sonrisa fija sin dolor. Cirugía guiada por tomografía 3D Cone Beam, biomateriales suizos para poco hueso y protocolos All-on-4 de dientes en un solo día.
+          En la <strong>Cl?nica Colombiana de Implantes Dentales</strong> recuperas tu sonrisa fija sin dolor. Cirug?a guiada por tomograf?a 3D Cone Beam, biomateriales suizos para poco hueso y protocolos All-on-4 de dientes en un solo d?a.
         </p>
 
         <!-- Facilities Bento -->
         <div class="bento-card facility-card" id="quirurgico">
           <div class="bento-title-row">
-            <h3>🏥 Sede Quirúrgica Estadio / Laureles</h3>
-            <span class="badge-titanium">Garantía Titanio Grado 5</span>
+            <h3><i class="fa-solid fa-hospital" style="color:#60a5fa; margin-right:8px;"></i> Sede Quir?rgica Estadio / Laureles</h3>
+            <span class="badge-titanium">Garant?a Titanio Grado 5</span>
           </div>
           <div class="facility-grid">
             <div class="facility-item">
-              <strong>🔬 Tomógrafo 3D Cone Beam</strong>
-              <p>Escaneo milimétrico del hueso alveolar sin desplazarte de la clínica.</p>
+              <strong><i class="fa-solid fa-cube" style="color:#818cf8;"></i> Tom?grafo 3D Cone Beam</strong>
+              <p>Escaneo milim?trico del hueso alveolar sin desplazarte de la cl?nica.</p>
             </div>
             <div class="facility-item">
-              <strong>⚡ Cirugía Guiada Digital</strong>
-              <p>Colocación de implantes con férulas computarizadas sin cortes ni suturas.</p>
+              <strong><i class="fa-solid fa-bolt" style="color:#34d399;"></i> Cirug?a Guiada Digital</strong>
+              <p>Colocaci?n de implantes con f?rulas computarizadas sin cortes ni suturas.</p>
             </div>
             <div class="facility-item">
-              <strong>📍 Ubicación Estratégica</strong>
+              <strong><i class="fa-solid fa-location-dot" style="color:#f87171;"></i> Ubicaci?n Estrat?gica</strong>
               <p>Diagonal 75E # 33A-160 (Frente al Estadio / Cerca a Laureles).</p>
             </div>
           </div>
@@ -82,17 +1068,17 @@
         <!-- Treatment Calculator Bento -->
         <div class="bento-card calc-card" id="cotizador">
           <div class="bento-title-row">
-            <h3>💰 Cotizador Clínico de Implantología (COP)</h3>
-            <span class="badge-green">Diagnóstico 3D Incluido</span>
+            <h3><i class="fa-solid fa-calculator" style="color:#34d399; margin-right:8px;"></i> Cotizador Cl?nico de Implantolog?a (COP)</h3>
+            <span class="badge-green">Diagn?stico 3D Incluido</span>
           </div>
           <div class="calc-grid">
             <div class="form-group">
-              <label>Procedimiento Quirúrgico</label>
+              <label>Procedimiento Quir?rgico</label>
               <select id="calc-treatment" onchange="runCalculator()">
                 <option value="implante_simple">Implante Titanio Guiado Individual ($2.500.000 COP)</option>
-                <option value="all_on_4">Rehabilitación Total Fija All-on-4 ($14.000.000 COP / arcada)</option>
-                <option value="injerto_oseo">Regeneración Ósea con Biomaterial ($900.000 COP)</option>
-                <option value="seno_maxilar">Elevación de Seno Maxilar ($1.400.000 COP)</option>
+                <option value="all_on_4">Rehabilitaci?n Total Fija All-on-4 ($14.000.000 COP / arcada)</option>
+                <option value="injerto_oseo">Regeneraci?n ?sea con Biomaterial ($900.000 COP)</option>
+                <option value="seno_maxilar">Elevaci?n de Seno Maxilar ($1.400.000 COP)</option>
                 <option value="corona_zirconio">Corona en Zirconio sobre Implante ($1.200.000 COP)</option>
               </select>
             </div>
@@ -103,11 +1089,11 @@
           </div>
           <div class="calc-results">
             <div class="res-row">
-              <span>Inversión Quirúrgica Estimada:</span>
+              <span>Inversi?n Quir?rgica Estimada:</span>
               <strong id="res-total-cop" class="highlight-indigo">$5.000.000 COP</strong>
             </div>
             <div class="res-row finance-row">
-              <span>Financiación Quirúrgica (12 Meses):</span>
+              <span>Financiaci?n Quir?rgica (12 Meses):</span>
               <strong id="res-monthly-cop" class="highlight-emerald">$416.667 COP/mes</strong>
             </div>
           </div>
@@ -115,10 +1101,10 @@
 
         <!-- Quick Scenarios -->
         <div class="quick-scenarios">
-          <span class="scenarios-title">⚡ Consultas Quirúrgicas:</span>
-          <button class="scenario-btn" onclick="sendQuickMessage('Quiero cotizar implantes dentales individuales de titanio')">🦷 Implante Individual</button>
-          <button class="scenario-btn" onclick="sendQuickMessage('¿Cómo funciona el tratamiento de arcada completa All-on-4?')">⚡ All-on-4 (24h)</button>
-          <button class="scenario-btn" onclick="sendQuickMessage('Me dijeron que tengo poco hueso, ¿hacen injertos?')">🔬 Poco Hueso / Injertos</button>
+          <span class="scenarios-title" style="color:#94a3b8; font-weight:600;"><i class="fa-solid fa-bolt" style="color:#f59e0b;"></i> Consultas Quir?rgicas:</span>
+          <button class="scenario-btn" onclick="sendQuickMessage('Quiero cotizar implantes dentales individuales de titanio')"><i class="fa-solid fa-tooth"></i> Implante Individual</button>
+          <button class="scenario-btn" onclick="sendQuickMessage('?C?mo funciona el tratamiento de arcada completa All-on-4?')"><i class="fa-solid fa-bolt"></i> All-on-4 (24h)</button>
+          <button class="scenario-btn" onclick="sendQuickMessage('Me dijeron que tengo poco hueso, ?hacen injertos?')"><i class="fa-solid fa-microscope"></i> Poco Hueso / Injertos</button>
         </div>
       </div>
 
@@ -127,21 +1113,21 @@
         <div class="phone-spotlight-implantes">
           <div class="phone-header-pill">
             <span class="live-dot-green"></span>
-            <span>Dr. Felipe • Coordinador Quirúrgico</span>
+            <span>Dr. Felipe Restrepo ? Coordinador Quir?rgico</span>
           </div>
 
           <div class="phone-frame">
             <div class="phone-notch"></div>
             <header class="chat-header">
               <div class="chat-avatar">
-                <span class="avatar-badge">👨‍⚕️</span>
+                <span class="avatar-badge"><i class="fa-solid fa-user-doctor"></i></span>
               </div>
               <div class="chat-meta">
-                <div class="chat-title">Dr. Felipe • Col. Implantes <span class="verified-check">✓</span></div>
-                <div class="chat-subtitle">Laureles / Estadio • En Línea</div>
+                <div class="chat-title">Dr. Felipe ? Col. Implantes <span class="verified-check" style="color:#34d399;">?</span></div>
+                <div class="chat-subtitle">Laureles / Estadio ? En L?nea</div>
               </div>
               <div class="chat-header-actions">
-                <span style="font-size:16px;">🔬</span>
+                <i class="fa-solid fa-circle-check" style="color:#10b981;"></i>
               </div>
             </header>
 
@@ -149,26 +1135,26 @@
               <div class="date-badge">Hoy</div>
               <div class="msg incoming">
                 <div class="bubble">
-                  <p>¡Hola! Bienvenido a la <strong>Clínica Colombiana de Implantes Dentales</strong> 🦷⚡</p>
-                  <p>Le habla el <strong>Dr. Felipe Restrepo</strong>, coordinador del equipo quirúrgico. En nuestra sede de Laureles/Estadio somos líderes en rehabilitación oral sobre implantes y regeneración ósea.</p>
-                  <p>¿Qué tipo de tratamiento requiere o le gustaría agendar una tomografía 3D de diagnóstico?</p>
+                  <p>?Hola! Bienvenido a la <strong>Cl?nica Colombiana de Implantes Dentales</strong> ???</p>
+                  <p>Le habla el <strong>Dr. Felipe Restrepo</strong>, coordinador del equipo quir?rgico. En nuestra sede de Laureles/Estadio somos l?deres en rehabilitaci?n oral sobre implantes y regeneraci?n ?sea.</p>
+                  <p>?Qu? tipo de tratamiento requiere o le gustar?a agendar una tomograf?a 3D de diagn?stico?</p>
                   <span class="msg-time">09:00</span>
                 </div>
               </div>
             </div>
 
             <div class="typing-notice" id="typing-notice" style="display:none;">
-              Dr. Felipe está escribiendo<span>.</span><span>.</span><span>.</span>
+              Dr. Felipe est? escribiendo<span>.</span><span>.</span><span>.</span>
             </div>
 
             <div class="voice-indicator" id="voice-indicator" style="display: none;">
-              🎙️ <span id="voice-status-text">Dr. Felipe está hablando (Voz Neuronal Gonzalo)...</span>
+              <i class="fa-solid fa-microphone"></i> <span id="voice-status-text">Dr. Felipe est? hablando (Voz Neuronal Gonzalo)...</span>
               <div class="sound-wave"><span></span><span></span><span></span><span></span></div>
             </div>
 
             <footer class="chat-input-bar">
-              <input type="text" id="user-input" placeholder="Consulte al especialista quirúrgico..." autocomplete="off">
-              <button id="voice-mic-btn" class="mic-btn" onclick="toggleVoiceInput()" title="Hablar por micrófono">🎙️</button>
+              <input type="text" id="user-input" placeholder="Consulte al especialista quir?rgico..." autocomplete="off">
+              <button id="voice-mic-btn" class="mic-btn" onclick="toggleVoiceInput()" title="Hablar por micr?fono"><i class="fa-solid fa-microphone"></i></button>
               <button id="send-btn" class="btn-send" onclick="submitMessage()">Enviar</button>
             </footer>
           </div>
@@ -177,34 +1163,34 @@
     </div>
   </section>
 
-  <!-- Section 2: Procedimientos Quirúrgicos -->
+  <!-- Section 2: Procedimientos Quir?rgicos -->
   <section class="section-container" id="especialidades">
-    <div class="section-header">
-      <span class="section-kicker">EXCELENCIA QUIRÚRGICA & BIOMATERIALES</span>
-      <h2>Tratamientos Quirúrgicos Especializados</h2>
-      <p>Cirugía bucal avanzada con tecnología tomográfica computarizada in-house:</p>
+    <div class="section-header" style="text-align:center; max-width:700px; margin:0 auto 40px;">
+      <span class="section-kicker" style="color:#818cf8; font-weight:700; letter-spacing:1px; font-size:0.8rem;">EXCELENCIA QUIR?RGICA & BIOMATERIALES</span>
+      <h2 style="font-size:2.2rem; font-family:'Space Grotesk',sans-serif; margin-top:8px;">Tratamientos Quir?rgicos Especializados</h2>
+      <p style="color:#94a3b8; margin-top:10px;">Cirug?a bucal avanzada con tecnolog?a tomogr?fica computarizada in-house en Medell?n:</p>
     </div>
 
     <div class="specialties-grid">
       <div class="specialty-card">
-        <div class="specialty-icon">🦷</div>
+        <div class="specialty-icon"><i class="fa-solid fa-tooth"></i></div>
         <h4>Implante Titanio Individual</h4>
-        <p>Reemplazo de raíz dental con titanio grado médico oseointegrable y corona en zirconio translúcido.</p>
+        <p>Reemplazo de ra?z dental con titanio grado m?dico oseointegrable y corona en zirconio transl?cido.</p>
       </div>
       <div class="specialty-card">
-        <div class="specialty-icon">⚡</div>
+        <div class="specialty-icon"><i class="fa-solid fa-bolt"></i></div>
         <h4>All-on-4 / All-on-6 Inmediato</h4>
-        <p>Fijación de prótesis dental completa sobre 4 o 6 implantes angulados, entregando dientes fijos en 24 horas.</p>
+        <p>Fijaci?n de pr?tesis dental completa sobre 4 o 6 implantes angulados, entregando dientes fijos en 24 horas.</p>
       </div>
       <div class="specialty-card">
-        <div class="specialty-icon">🔬</div>
-        <h4>Regeneración Ósea Guiada</h4>
-        <p>Reconstrucción del reborde alveolar con membranas de colágeno y hueso liofilizado para casos con reabsorción severa.</p>
+        <div class="specialty-icon"><i class="fa-solid fa-bone"></i></div>
+        <h4>Regeneraci?n ?sea Guiada</h4>
+        <p>Reconstrucci?n del reborde alveolar con membranas de col?geno y hueso liofilizado para casos con reabsorci?n severa.</p>
       </div>
       <div class="specialty-card">
-        <div class="specialty-icon">🛡️</div>
-        <h4>Elevación de Seno Maxilar</h4>
-        <p>Aumento del volumen óseo en la zona posterior del maxilar superior para permitir colocación segura de implantes.</p>
+        <div class="specialty-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h4>Elevaci?n de Seno Maxilar</h4>
+        <p>Aumento del volumen ?seo en la zona posterior del maxilar superior para permitir colocaci?n segura de implantes.</p>
       </div>
     </div>
   </section>
@@ -213,19 +1199,19 @@
   <div id="admin-modal" class="modal-backdrop" style="display:none;">
     <div class="modal-dialog admin-dialog">
       <div class="modal-head">
-        <h3>📋 Citas Quirúrgicas • Clínica Colombiana de Implantes</h3>
+        <h3><i class="fa-solid fa-clipboard-list"></i> Citas Quir?rgicas ? Cl?nica Colombiana de Implantes</h3>
         <div style="display:flex;gap:10px;align-items:center;">
-          <a href="/api/admin/export-csv" class="btn-csv" download>📥 Exportar CSV</a>
+          <a href="/api/admin/export-csv" class="btn-csv" download><i class="fa-solid fa-download"></i> Exportar CSV</a>
           <button class="btn-close" onclick="closeAdminModal()">&times;</button>
         </div>
       </div>
       <div class="admin-stats">
         <div class="stat-card">
-          <span class="stat-lbl">Pacientes Quirúrgicos</span>
+          <span class="stat-lbl">Pacientes Quir?rgicos</span>
           <span class="stat-val" id="stat-leads-count">0</span>
         </div>
         <div class="stat-card">
-          <span class="stat-lbl">Pipeline Quirúrgico</span>
+          <span class="stat-lbl">Pipeline Quir?rgico</span>
           <span class="stat-val highlight-indigo" id="stat-leads-val">$0 COP</span>
         </div>
       </div>
@@ -238,49 +1224,47 @@
               <th>Paciente</th>
               <th>WhatsApp</th>
               <th>Tratamiento</th>
-              <th>Estado Óseo</th>
+              <th>Estado ?seo</th>
               <th>Fecha Cita</th>
               <th>Presupuesto (COP)</th>
               <th>Estado</th>
             </tr>
           </thead>
           <tbody id="leads-tbody">
-            <tr><td colspan="9" style="text-align:center;">Cargando registros quirúrgicos...</td></tr>
+            <tr><td colspan="9" style="text-align:center;">Cargando registros quir?rgicos...</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
 
-  <footer class="site-footer">
+  <footer class="site-footer" style="background:#0a0d14; border-top:1px solid rgba(255,255,255,0.06); padding:30px 20px; text-align:center; color:#64748b; font-size:0.85rem;">
     <div class="footer-content">
-      <p>© 2026 Clínica Colombiana de Implantes Dentales • Diagonal 75E # 33A-160, Sector Estadio / Laureles, Medellín • PBX: (604) 444 8212</p>
-      <button class="btn-reset-text" onclick="resetChat()">Reiniciar Conversación</button>
+      <p>? 2026 Cl?nica Colombiana de Implantes Dentales ? Diagonal 75E # 33A-160, Sector Estadio / Laureles, Medell?n ? PBX: (604) 444 8212</p>
+      <button class="btn-reset-text" onclick="resetChat()" style="margin-top:10px; background:transparent; border:none; color:#94a3b8; text-decoration:underline; cursor:pointer;">Reiniciar Conversaci?n</button>
     </div>
   </footer>
 
   <script src="app.js"></script>
 
-<script>
-  // Seamless local dev & GitHub Pages support
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    const portMap = {
-      'smile-in-medellin': '3000',
-      'sonria-clinicas-medellin': '3001',
-      'clinica-artica-medellin': '3002',
-      'dental-home-medellin': '3003',
-      'marlon-becerra-medellin': '3004',
-      'clinica-colombiana-implantes': '3005',
-      'oral-studio-medellin': '3006'
-    };
-    document.querySelectorAll('a[href*="vence31.github.io"]').forEach(a => {
-      for (const [slug, port] of Object.entries(portMap)) {
-        if (a.href.includes(slug)) { a.href = 'http://localhost:' + port; break; }
-      }
-    });
-  }
-</script>
+  <script>
+    // Seamless local dev & GitHub Pages support
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      const portMap = {
+        'smile-in-medellin': '3000',
+        'sonria-clinicas-medellin': '3001',
+        'clinica-artica-medellin': '3002',
+        'dental-home-medellin': '3003',
+        'marlon-becerra-medellin': '3004',
+        'clinica-colombiana-implantes': '3005',
+        'oral-studio-medellin': '3006'
+      };
+      document.querySelectorAll('a[href*="vence31.github.io"]').forEach(a => {
+        for (const [slug, port] of Object.entries(portMap)) {
+          if (a.href.includes(slug)) { a.href = 'http://localhost:' + port; break; }
+        }
+      });
+    }
+  </script>
 </body>
-
 </html>
-
