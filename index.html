@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Colombiana de Implantes Dentales • Medellín</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-logo">🦷 CLÍNICA COLOMBIANA DE IMPLANTES</span>
+        <span class="brand-sub">Centro Quirúrgico Medellín • Laureles / Estadio</span>
+      </div>
+      <nav class="nav-links-menu">
+        <a href="#quirurgico" class="nav-link-item">Tecnología Quirúrgica</a>
+        <a href="#especialidades" class="nav-link-item">Implantes & All-on-4</a>
+        <a href="#cotizador" class="nav-link-item">Cotizador Titanio</a>
+      </nav>
+      <div class="nav-actions">
+        <span class="pbx-badge">📞 PBX: (604) 444 8212</span>
+        <button class="btn-admin" onclick="openAdminModal()">📋 Citas Quirúrgicas (<span id="lead-count-badge">0</span>)</button>
+        <!-- Clinic Switcher -->
+        <div class="clinic-switcher-dropdown">
+          <button class="btn-switch-hub">🌐 Red Medellín ▾</button>
+          <div class="switcher-menu">
+            <a href="http://localhost:3000">1. Smile in Medellín (3000)</a>
+            <a href="http://localhost:3001">2. Sonría Clínicas #262 (3001)</a>
+            <a href="http://localhost:3002">3. Clínica Ártica (3002)</a>
+            <a href="http://localhost:3003">4. Dental Home (3003)</a>
+            <a href="http://localhost:3004">5. Marlon Becerra (3004)</a>
+            <a href="http://localhost:3005" class="active-clinic">6. Col. de Implantes (3005)</a>
+            <a href="http://localhost:3006">7. Oral Studio (3006)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <!-- Left Column -->
+      <div class="hero-left">
+        <div class="hero-pill-badge">
+          <span class="pulse-dot"></span>
+          <span>🔬 Centro Quirúrgico Especializado • Carga Inmediata en 24 Horas</span>
+        </div>
+        <h1 class="hero-headline">
+          Especialistas en Implantes Dentales de Titanio y <span class="text-gradient-indigo">Regeneración Ósea en Medellín.</span>
+        </h1>
+        <p class="hero-subhead">
+          En la <strong>Clínica Colombiana de Implantes Dentales</strong> recuperas tu sonrisa fija sin dolor. Cirugía guiada por tomografía 3D Cone Beam, biomateriales suizos para poco hueso y protocolos All-on-4 de dientes en un solo día.
+        </p>
+
+        <!-- Facilities Bento -->
+        <div class="bento-card facility-card" id="quirurgico">
+          <div class="bento-title-row">
+            <h3>🏥 Sede Quirúrgica Estadio / Laureles</h3>
+            <span class="badge-titanium">Garantía Titanio Grado 5</span>
+          </div>
+          <div class="facility-grid">
+            <div class="facility-item">
+              <strong>🔬 Tomógrafo 3D Cone Beam</strong>
+              <p>Escaneo milimétrico del hueso alveolar sin desplazarte de la clínica.</p>
+            </div>
+            <div class="facility-item">
+              <strong>⚡ Cirugía Guiada Digital</strong>
+              <p>Colocación de implantes con férulas computarizadas sin cortes ni suturas.</p>
+            </div>
+            <div class="facility-item">
+              <strong>📍 Ubicación Estratégica</strong>
+              <p>Diagonal 75E # 33A-160 (Frente al Estadio / Cerca a Laureles).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Treatment Calculator Bento -->
+        <div class="bento-card calc-card" id="cotizador">
+          <div class="bento-title-row">
+            <h3>💰 Cotizador Clínico de Implantología (COP)</h3>
+            <span class="badge-green">Diagnóstico 3D Incluido</span>
+          </div>
+          <div class="calc-grid">
+            <div class="form-group">
+              <label>Procedimiento Quirúrgico</label>
+              <select id="calc-treatment" onchange="runCalculator()">
+                <option value="implante_simple">Implante Titanio Guiado Individual ($2.500.000 COP)</option>
+                <option value="all_on_4">Rehabilitación Total Fija All-on-4 ($14.000.000 COP / arcada)</option>
+                <option value="injerto_oseo">Regeneración Ósea con Biomaterial ($900.000 COP)</option>
+                <option value="seno_maxilar">Elevación de Seno Maxilar ($1.400.000 COP)</option>
+                <option value="corona_zirconio">Corona en Zirconio sobre Implante ($1.200.000 COP)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Cantidad de Implantes / Zonas</label>
+              <input type="number" id="calc-qty" value="2" min="1" max="12" oninput="runCalculator()">
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="res-row">
+              <span>Inversión Quirúrgica Estimada:</span>
+              <strong id="res-total-cop" class="highlight-indigo">$5.000.000 COP</strong>
+            </div>
+            <div class="res-row finance-row">
+              <span>Financiación Quirúrgica (12 Meses):</span>
+              <strong id="res-monthly-cop" class="highlight-emerald">$416.667 COP/mes</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Scenarios -->
+        <div class="quick-scenarios">
+          <span class="scenarios-title">⚡ Consultas Quirúrgicas:</span>
+          <button class="scenario-btn" onclick="sendQuickMessage('Quiero cotizar implantes dentales individuales de titanio')">🦷 Implante Individual</button>
+          <button class="scenario-btn" onclick="sendQuickMessage('¿Cómo funciona el tratamiento de arcada completa All-on-4?')">⚡ All-on-4 (24h)</button>
+          <button class="scenario-btn" onclick="sendQuickMessage('Me dijeron que tengo poco hueso, ¿hacen injertos?')">🔬 Poco Hueso / Injertos</button>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Phone Simulator with Dr. Felipe -->
+      <div class="hero-right">
+        <div class="phone-spotlight-implantes">
+          <div class="phone-header-pill">
+            <span class="live-dot-green"></span>
+            <span>Dr. Felipe • Coordinador Quirúrgico</span>
+          </div>
+
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <header class="chat-header">
+              <div class="chat-avatar">
+                <span class="avatar-badge">👨‍⚕️</span>
+              </div>
+              <div class="chat-meta">
+                <div class="chat-title">Dr. Felipe • Col. Implantes <span class="verified-check">✓</span></div>
+                <div class="chat-subtitle">Laureles / Estadio • En Línea</div>
+              </div>
+              <div class="chat-header-actions">
+                <span style="font-size:16px;">🔬</span>
+              </div>
+            </header>
+
+            <div class="chat-stream" id="chat-stream">
+              <div class="date-badge">Hoy</div>
+              <div class="msg incoming">
+                <div class="bubble">
+                  <p>¡Hola! Bienvenido a la <strong>Clínica Colombiana de Implantes Dentales</strong> 🦷⚡</p>
+                  <p>Le habla el <strong>Dr. Felipe Restrepo</strong>, coordinador del equipo quirúrgico. En nuestra sede de Laureles/Estadio somos líderes en rehabilitación oral sobre implantes y regeneración ósea.</p>
+                  <p>¿Qué tipo de tratamiento requiere o le gustaría agendar una tomografía 3D de diagnóstico?</p>
+                  <span class="msg-time">09:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="typing-notice" id="typing-notice" style="display:none;">
+              Dr. Felipe está escribiendo<span>.</span><span>.</span><span>.</span>
+            </div>
+
+            <div class="voice-indicator" id="voice-indicator" style="display: none;">
+              🎙️ <span id="voice-status-text">Dr. Felipe está hablando (Voz Neuronal Gonzalo)...</span>
+              <div class="sound-wave"><span></span><span></span><span></span><span></span></div>
+            </div>
+
+            <footer class="chat-input-bar">
+              <input type="text" id="user-input" placeholder="Consulte al especialista quirúrgico..." autocomplete="off">
+              <button id="voice-mic-btn" class="mic-btn" onclick="toggleVoiceInput()" title="Hablar por micrófono">🎙️</button>
+              <button id="send-btn" class="btn-send" onclick="submitMessage()">Enviar</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Procedimientos Quirúrgicos -->
+  <section class="section-container" id="especialidades">
+    <div class="section-header">
+      <span class="section-kicker">EXCELENCIA QUIRÚRGICA & BIOMATERIALES</span>
+      <h2>Tratamientos Quirúrgicos Especializados</h2>
+      <p>Cirugía bucal avanzada con tecnología tomográfica computarizada in-house:</p>
+    </div>
+
+    <div class="specialties-grid">
+      <div class="specialty-card">
+        <div class="specialty-icon">🦷</div>
+        <h4>Implante Titanio Individual</h4>
+        <p>Reemplazo de raíz dental con titanio grado médico oseointegrable y corona en zirconio translúcido.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">⚡</div>
+        <h4>All-on-4 / All-on-6 Inmediato</h4>
+        <p>Fijación de prótesis dental completa sobre 4 o 6 implantes angulados, entregando dientes fijos en 24 horas.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">🔬</div>
+        <h4>Regeneración Ósea Guiada</h4>
+        <p>Reconstrucción del reborde alveolar con membranas de colágeno y hueso liofilizado para casos con reabsorción severa.</p>
+      </div>
+      <div class="specialty-card">
+        <div class="specialty-icon">🛡️</div>
+        <h4>Elevación de Seno Maxilar</h4>
+        <p>Aumento del volumen óseo en la zona posterior del maxilar superior para permitir colocación segura de implantes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal: Admin CRM -->
+  <div id="admin-modal" class="modal-backdrop" style="display:none;">
+    <div class="modal-dialog admin-dialog">
+      <div class="modal-head">
+        <h3>📋 Citas Quirúrgicas • Clínica Colombiana de Implantes</h3>
+        <div style="display:flex;gap:10px;align-items:center;">
+          <a href="/api/admin/export-csv" class="btn-csv" download>📥 Exportar CSV</a>
+          <button class="btn-close" onclick="closeAdminModal()">&times;</button>
+        </div>
+      </div>
+      <div class="admin-stats">
+        <div class="stat-card">
+          <span class="stat-lbl">Pacientes Quirúrgicos</span>
+          <span class="stat-val" id="stat-leads-count">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-lbl">Pipeline Quirúrgico</span>
+          <span class="stat-val highlight-indigo" id="stat-leads-val">$0 COP</span>
+        </div>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Fecha</th>
+              <th>Paciente</th>
+              <th>WhatsApp</th>
+              <th>Tratamiento</th>
+              <th>Estado Óseo</th>
+              <th>Fecha Cita</th>
+              <th>Presupuesto (COP)</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="leads-tbody">
+            <tr><td colspan="9" style="text-align:center;">Cargando registros quirúrgicos...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2026 Clínica Colombiana de Implantes Dentales • Diagonal 75E # 33A-160, Sector Estadio / Laureles, Medellín • PBX: (604) 444 8212</p>
+      <button class="btn-reset-text" onclick="resetChat()">Reiniciar Conversación</button>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
