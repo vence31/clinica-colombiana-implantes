@@ -28,13 +28,13 @@
         <div class="clinic-switcher-dropdown">
           <button class="btn-switch-hub">🌐 Red Medellín ▾</button>
           <div class="switcher-menu">
-            <a href="http://localhost:3000">1. Smile in Medellín (3000)</a>
-            <a href="http://localhost:3001">2. Sonría Clínicas #262 (3001)</a>
-            <a href="http://localhost:3002">3. Clínica Ártica (3002)</a>
-            <a href="http://localhost:3003">4. Dental Home (3003)</a>
-            <a href="http://localhost:3004">5. Marlon Becerra (3004)</a>
-            <a href="http://localhost:3005" class="active-clinic">6. Col. de Implantes (3005)</a>
-            <a href="http://localhost:3006">7. Oral Studio (3006)</a>
+            <a href="https://vence31.github.io/smile-in-medellin/">1. Smile in Medellín (3000)</a>
+            <a href="https://vence31.github.io/sonria-clinicas-medellin/">2. Sonría Clínicas #262 (3001)</a>
+            <a href="https://vence31.github.io/clinica-artica-medellin/">3. Clínica Ártica (3002)</a>
+            <a href="https://vence31.github.io/dental-home-medellin/">4. Dental Home (3003)</a>
+            <a href="https://vence31.github.io/marlon-becerra-medellin/">5. Marlon Becerra (3004)</a>
+            <a href="https://vence31.github.io/clinica-colombiana-implantes/" class="active-clinic">6. Col. de Implantes (3005)</a>
+            <a href="https://vence31.github.io/oral-studio-medellin/">7. Oral Studio (3006)</a>
           </div>
         </div>
       </div>
@@ -260,6 +260,27 @@
   </footer>
 
   <script src="app.js"></script>
+
+<script>
+  // Seamless local dev & GitHub Pages support
+  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+    const portMap = {
+      'smile-in-medellin': '3000',
+      'sonria-clinicas-medellin': '3001',
+      'clinica-artica-medellin': '3002',
+      'dental-home-medellin': '3003',
+      'marlon-becerra-medellin': '3004',
+      'clinica-colombiana-implantes': '3005',
+      'oral-studio-medellin': '3006'
+    };
+    document.querySelectorAll('a[href*="vence31.github.io"]').forEach(a => {
+      for (const [slug, port] of Object.entries(portMap)) {
+        if (a.href.includes(slug)) { a.href = 'http://localhost:' + port; break; }
+      }
+    });
+  }
+</script>
 </body>
+
 </html>
 
